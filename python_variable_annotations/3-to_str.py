@@ -3,6 +3,7 @@
 a module that contains a function that takes a float and returns a string
 """
 
+
 def to_str(n: float) -> str:
     """
     a function that takes a float and convert it into a string
@@ -13,4 +14,4 @@ def to_str(n: float) -> str:
     Returns:
         the string representation of n
     """
-    return n.__str__()
+    return str(n)

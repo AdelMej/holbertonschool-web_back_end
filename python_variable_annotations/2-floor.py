@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ a module that contains a floor function that floor a float"""
 
+
 def floor(n: float) -> int:
     """
     a function that returns the floor of a float
