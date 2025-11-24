@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" a module that takes a string and an int or float and returns a tuple"""
 import typing
 
 
