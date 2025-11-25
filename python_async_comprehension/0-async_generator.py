@@ -8,7 +8,7 @@ import random
 import asyncio
 
 
-async def async_generator() -> typing.AsyncGenerator[float, None]:
+async def async_generator() -> typing.Generator[float, None]:
     """
     a function that generate an AsyncGenerator that returns 10 random values
     and await 1 second
