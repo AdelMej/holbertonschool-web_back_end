@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" a module containing a function that wait n times wait random """
 import asyncio
 import heapq
 
