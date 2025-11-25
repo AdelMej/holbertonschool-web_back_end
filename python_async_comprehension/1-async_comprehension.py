@@ -12,8 +12,4 @@ async def async_comprehension() -> typing.List[float]:
     Returns:
         a list of randomly generated floats
     """
-    result = []
-    async for value in async_generator():
-        result.append(value)
-
-    return result
+    return [value async for value in async_generator()]
