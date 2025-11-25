@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """ a module containing a function that wait n times wait random """
 import asyncio
-import heapq
+import typing
 
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
-async def task_wait_n(n: int, max_delay: int) -> list[float]:
+async def task_wait_n(n: int, max_delay: int) -> typing.List[float]:
     """
     a function that create n coroutines and returns
     a sorted list of wait_random
@@ -21,15 +21,11 @@ async def task_wait_n(n: int, max_delay: int) -> list[float]:
     if n == 0:
         return []
 
-    coroutines = [task_wait_random(max_delay) for _ in range(n)]
-    result = await asyncio.gather(*coroutines)
+    tasks = [task_wait_random(max_delay) for _ in range(n)]
 
-    # creating a heap with resulting gather
-    heap = []
-    for value in result:
-        heapq.heappush(heap, value)
+    output = []
+    for task in asyncio.as_completed(tasks):
+        result = await task
+        output.append(result)
 
-    # sort array by popping items from the heap they come with smallest first
-    sorted_array = [heapq.heappop(heap) for _ in range(len(heap))]
-
-    return sorted_array
+    return output
