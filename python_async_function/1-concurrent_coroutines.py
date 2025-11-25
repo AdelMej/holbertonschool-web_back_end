@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """ a module containing a function that wait n times wait random """
 import asyncio
+import typing
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list[float]:
+async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     """
     a function that create n coroutines and returns
     a sorted list of wait_random
