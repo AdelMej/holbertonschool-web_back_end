@@ -3,8 +3,10 @@
 import asyncio
 import typing
 
+task_wait_random = __import__('3-tasks').task_wait_random
 
-async def wait_n(n: int, max_delay: int) -> typing.List[float]:
+
+async def task_wait_n(n: int, max_delay: int) -> typing.List[float]:
     """
     a function that create n coroutines and returns
     a sorted list of wait_random
@@ -19,7 +21,7 @@ async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     if n == 0:
         return []
 
-    tasks = [wait_random(max_delay) for _ in range(n)]
+    tasks = [task_wait_random(max_delay) for _ in range(n)]
 
     output = []
     for task in asyncio.as_completed(tasks):
