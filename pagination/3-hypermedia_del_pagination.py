@@ -40,6 +40,16 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """
+        method that handle index pagination
+
+        Attriutes:
+            index(int): the current index
+            page_size(int): the size of the page
+
+        Returns:
+            a dictionary metadata of the requested page
+        """
         dataset = self.indexed_dataset()
         max_key = max(dataset.keys())
 
