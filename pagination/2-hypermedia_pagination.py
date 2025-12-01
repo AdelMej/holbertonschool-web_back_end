@@ -75,7 +75,7 @@ class Server:
             page_size: the size of a page
 
         Returns:
-            a dictionary containing metadata about the requested page
+            a dictionary containing metadata about the requested pages
         """
         dataset = self.get_page(page, page_size)
 
