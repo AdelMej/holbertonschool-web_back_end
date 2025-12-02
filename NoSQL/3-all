@@ -1,0 +1,2 @@
+// find all
+db.shool.find()
