@@ -1,0 +1,2 @@
+// update a document and add a row with $push
+db.school.updateMany({name: "Holberton school"}, {$set: {adress: "972 Mission street"}})
