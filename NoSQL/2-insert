@@ -1,4 +1,4 @@
 // a script that insert values in a school collection
 db.createCollection("school")
 use school
-db.insertOne({name: “Holberton school”})
+db.school.insertOne({name: "Holberton school"})
