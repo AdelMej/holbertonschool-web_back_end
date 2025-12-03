@@ -41,6 +41,5 @@ if __name__ == "__main__":
                 }
             )
         ) +
-        " status check",
-        end=""
+        " status check"
     )
