@@ -13,33 +13,33 @@ if __name__ == "__main__":
     print(str(logs_collection.count_documents({})) + " logs")
     print("Methods:")
     print(
-        "\tmethod GET: " +
-        str(logs_collection.count_documents({"method": "GET"}))
+        "\tmethod GET: {}"
+        .format(logs_collection.count_documents({"method": "GET"}))
     )
     print(
-        "\tmethod POST: " +
-        str(logs_collection.count_documents({"method": "POST"}))
+        "\tmethod POST: {}"
+        .format(logs_collection.count_documents({"method": "POST"}))
     )
     print(
-        "\tmethod PUT: " +
-        str(logs_collection.count_documents({"method": "PUT"}))
+        "\tmethod PUT: {}"
+        .format(logs_collection.count_documents({"method": "PUT"}))
     )
     print(
-        "\tmethod PATCH: " +
-        str(logs_collection.count_documents({"method": "PATCH"}))
+        "\tmethod PATCH: {}"
+        .format(logs_collection.count_documents({"method": "PATCH"}))
     )
     print(
-        "\tmethod DELETE: " +
-        str(logs_collection.count_documents({"method": "DELETE"}))
+        "\tmethod DELETE: {}"
+        .format(logs_collection.count_documents({"method": "DELETE"}))
     )
     print(
-        str(
+        "{} status check"
+        .format(
             logs_collection.count_documents(
                 {
                     "method": "GET",
                     "path": "/status"
                 }
             )
-        ) +
-        " status check"
+        )
     )
