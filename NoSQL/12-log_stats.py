@@ -10,7 +10,7 @@ if __name__ == "__main__":
     client = MongoClient("mongodb://127.0.0.1:27017")
     logs_collection = client.logs.nginx
 
-    print(str(logs_collection.count_documents({})) + " logs")
+    print("{} logs".format(logs_collection.count_documents({})))
     print("Methods:")
     print(
         "\tmethod GET: {}"
