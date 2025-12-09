@@ -10,6 +10,10 @@ export default class Pîcing {
     return `${this._amount} ${this._currency.displayFullCurrency()}`;
   }
 
+  static convertPrice(amount, conversionRate) {
+    return amount * conversionRate;
+  }
+
   set amount(amount) {
     this._amount = amount;
   }
