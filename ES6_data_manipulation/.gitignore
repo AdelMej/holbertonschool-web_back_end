@@ -4,3 +4,4 @@
 !*.js
 .eslintrc.js
 babel.config.js
+*-main.js
