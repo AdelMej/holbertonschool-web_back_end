@@ -1,0 +1,6 @@
+*
+!README.md
+!.gitignore
+!*.js
+.eslintrc.js
+babel.config.js
