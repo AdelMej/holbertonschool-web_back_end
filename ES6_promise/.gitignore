@@ -5,3 +5,4 @@
 .eslintrc.js
 utils.js
 babel.config.js
+*-main.js
