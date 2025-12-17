@@ -16,7 +16,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     }
     return {
       status: promise.status,
-      value: promise.reason.message,
+      value: promise.reason,
     };
   });
 }
