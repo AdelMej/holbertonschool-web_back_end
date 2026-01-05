@@ -1,0 +1,6 @@
+*
+!*.js
+!.gitignore
+!README.md
+!database.csv
+*-main.js
