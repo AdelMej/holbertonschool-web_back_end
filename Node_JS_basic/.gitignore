@@ -3,4 +3,5 @@
 !.gitignore
 !README.md
 !database.csv
+!package.json
 *-main.js
