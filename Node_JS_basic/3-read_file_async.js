@@ -38,22 +38,19 @@ function countStudents(path) {
         return;
       }
 
-      let result = '';
       const students = parseCsv(data);
 
-      result += `Number of students: ${students.length}\n`;
+      console.log(`Number of students: ${students.length}`);
 
       const grouped = groupByField(students);
 
       Object.entries(grouped).forEach(([field, students]) => {
-        result += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
+        console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
       });
 
-      resolve(result.trim());
+      resolve();
     });
   });
 }
-
-
 
 module.exports = countStudents;
