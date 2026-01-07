@@ -50,7 +50,7 @@ function countStudents(path) {
         result += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
       });
 
-      resolve(result);
+      resolve(result.trim());
     });
   });
 }
@@ -65,14 +65,10 @@ const app = http.createServer(async (req, res) => {
   if (req.url === '/students') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    try {
-      let output = 'This is the list of our students\n';
-      output += await countStudents('database.csv');
-      res.end(output);
-    } catch (err) {
-      res.statusCode = 500;
-      res.end(err.message);
-    }
+
+    let output = 'This is the list of our students\n';
+    output += await countStudents('database.csv');
+    res.end(output);
   }
 });
 
