@@ -37,17 +37,23 @@ function countStudents(path) {
         reject(new Error('Cannot load the database'));
         return;
       }
+
+      let result = '';
       const students = parseCsv(data);
-      console.log(`Number of students: ${students.length}`);
+
+      result += `Number of students: ${students.length}\n`;
 
       const grouped = groupByField(students);
 
       Object.entries(grouped).forEach(([field, students]) => {
-        console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
+        result += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
       });
-      resolve();
+
+      resolve(result.trim());
     });
   });
 }
+
+
 
 module.exports = countStudents;
