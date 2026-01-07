@@ -59,7 +59,7 @@ const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello Holberton School!\n');
+    res.end('Hello Holberton School!');
   }
 
   if (req.url === '/students') {
@@ -70,7 +70,6 @@ const app = http.createServer(async (req, res) => {
     output += await countStudents('database.csv');
     res.end(output);
   }
-  res.statusCode = 404;
   res.end();
 });
 
