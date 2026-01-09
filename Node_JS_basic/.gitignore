@@ -5,3 +5,6 @@
 !database.csv
 !package.json
 *-main*.js
+!full_server/
+!full_server/*
+!full_server/**
