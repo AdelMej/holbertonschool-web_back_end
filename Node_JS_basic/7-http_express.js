@@ -64,8 +64,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  const clientList = await countStudents(database);
-  res.type('text').send('This is the list of our students\n' + clientList);
+  let output = 'This is the list of our students\n';
+  try {
+    output += await countStudents(database);
+  } catch (err) {
+    output += err.message;
+  }
+  res.type('text').send(output);
 });
 
 app.listen(PORT);
