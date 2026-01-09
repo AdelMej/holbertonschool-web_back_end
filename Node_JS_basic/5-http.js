@@ -69,8 +69,13 @@ const app = http.createServer(async (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
 
     let output = 'This is the list of our students\n';
-    output += await countStudents(database);
-    res.end(output);
+    try {
+      output += await countStudents(database);
+      res.end(output);
+    } catch (err) {
+      output += err.message;
+      res.end(output);
+    }
   }
   res.end();
 });
