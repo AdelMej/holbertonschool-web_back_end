@@ -57,13 +57,14 @@ function countStudents(path) {
 
 const app = express();
 const PORT = 1245;
+const database = process.argv[2];
 
 app.get('/', (req, res) => {
   res.type('text').send('Hello Holberton School!');
 });
 
 app.get('/students', async (req, res) => {
-  const clientList = await countStudents('database.csv');
+  const clientList = await countStudents(database);
   res.type('text').send('This is the list of our students\n' + clientList);
 });
 

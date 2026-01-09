@@ -55,6 +55,8 @@ function countStudents(path) {
   });
 }
 
+const database = process.argv[2];
+
 const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
     res.statusCode = 200;
@@ -67,7 +69,7 @@ const app = http.createServer(async (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
 
     let output = 'This is the list of our students\n';
-    output += await countStudents('database.csv');
+    output += await countStudents(database);
     res.end(output);
   }
   res.end();
