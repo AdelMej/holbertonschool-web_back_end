@@ -1,4 +1,4 @@
-import readDatabase from '../utils.js';
+const readDatabase = require('../utils.js');
 
 const dbPath = process.argv[2];
 
@@ -42,4 +42,4 @@ class StudentsController {
   }
 }
 
-export default StudentsController;
+module.exports = StudentsController;
